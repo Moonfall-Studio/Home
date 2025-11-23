@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Member - Moonfall Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/i18next@21.6.10/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.3.1/i18nextHttpBackend.min.js"></script>
+    <script
+        src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="header-logo">
+            <img src="assets/images/logo.png" alt="Moonfall Studio Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="home-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="our-work.html" data-i18n="nav.work">Our Work</a></li>
+                <li><a href="our-team.html" class="active" data-i18n="nav.team">Our Team</a></li>
+                <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Get In Touch</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher">
+            <div class="lang-dropdown">
+                <span class="lang-flag" id="current-flag">🇺🇸</span>
+                <span id="current-lang">EN</span>
+                <div class="lang-menu">
+                    <div class="lang-option" onclick="changeLanguage('en')">
+                        <span class="lang-flag">🇺🇸</span> English
+                    </div>
+                    <div class="lang-option" onclick="changeLanguage('fr')">
+                        <span class="lang-flag">🇫🇷</span> Français
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section" style="padding-top: 150px;">
+            <div class="container">
+                <div style="display: flex; gap: 4rem; align-items: flex-start; text-align: left;">
+                    <div style="flex: 1; max-width: 300px;">
+                        <div
+                            style="width: 100%; padding-bottom: 100%; background: var(--color-bg-alt); border-radius: 50%; border: 1px solid var(--color-text-muted); margin-bottom: 2rem;">
+                        </div>
+                        <h3 style="margin-bottom: 0.5rem;">Jane Doe</h3>
+                        <p style="color: var(--color-text-muted);">Creative Director</p>
+                    </div>
+                    <div style="flex: 2;">
+                        <h1 style="font-size: 2.5rem; margin-bottom: 2rem;">About Jane</h1>
+                        <p style="margin-bottom: 1.5rem; max-width: 100%;">Jane is the visionary behind Moonfall
+                            Studio's artistic direction. With over 10 years of experience in the industry, she
+                            specializes in creating atmospheric and emotionally resonant worlds.</p>
+                        <p style="max-width: 100%;">"I believe that darkness is not just the absence of light, but a
+                            canvas for the imagination."</p>
+
+                        <div style="margin-top: 3rem;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Projects</h3>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 0.5rem;"><a href="raya.html"
+                                        style="color: var(--color-text); text-decoration: none; border-bottom: 1px solid var(--color-text-muted);">Raya:
+                                        The Chaos Within</a> - Lead Artist</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Moonfall Studio. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

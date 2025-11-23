@@ -1,0 +1,27 @@
+{
+    "studioName": "Moonfall Studio",
+    "tagline": "Rêver dans l'obscurité.",
+    "nav": {
+        "work": "Nos Projets",
+        "team": "L'Équipe",
+        "about": "À Propos",
+        "contact": "Contact"
+    },
+    "raya": {
+        "title": "Raya: The Chaos Within",
+        "teaser": "Embrassez le chaos. Un nouveau voyage vous attend.",
+        "cta": "Découvrir le Jeu",
+        "description": "Raya: The Chaos Within est un jeu d'action-aventure se déroulant dans un monde fracturé par une magie ancienne. Incarnez Raya, une guerrière cherchant à rétablir l'équilibre d'une lune brisée."
+    },
+    "about": {
+        "title": "À Propos",
+        "description": "Nous sommes un studio créatif dédié à la conception de mondes immersifs et d'histoires inoubliables. Notre passion réside dans l'exploration de l'inconnu et la mise en lumière des rêves les plus sombres."
+    },
+    "contact": {
+        "title": "Contact",
+        "email": "bonjour@moonfallstudio.com"
+    },
+    "footer": {
+        "rights": "Tous droits réservés."
+    }
+}

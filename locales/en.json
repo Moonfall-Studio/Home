@@ -1,0 +1,27 @@
+{
+    "studioName": "Moonfall Studio",
+    "tagline": "Dreaming in the dark.",
+    "nav": {
+        "work": "Our Work",
+        "team": "Our Team",
+        "about": "About Us",
+        "contact": "Get In Touch"
+    },
+    "raya": {
+        "title": "Raya: The Chaos Within",
+        "teaser": "Embrace the chaos. A new journey awaits.",
+        "cta": "Discover the Game",
+        "description": "Raya: The Chaos Within is an action-adventure game set in a world fractured by ancient magic. Play as Raya, a warrior seeking to restore balance to a broken moon."
+    },
+    "about": {
+        "title": "About Us",
+        "description": "We are a creative studio dedicated to crafting immersive worlds and unforgettable stories. Our passion lies in exploring the unknown and bringing the darkest dreams to light."
+    },
+    "contact": {
+        "title": "Contact",
+        "email": "hello@moonfallstudio.com"
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Moonfall Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/i18next@21.6.10/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.3.1/i18nextHttpBackend.min.js"></script>
+    <script
+        src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="header-logo">
+            <img src="assets/images/logo.png" alt="Moonfall Studio Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="home-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="our-work.html" data-i18n="nav.work">Our Work</a></li>
+                <li><a href="our-team.html" data-i18n="nav.team">Our Team</a></li>
+                <li><a href="about.html" class="active" data-i18n="nav.about">About Us</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Get In Touch</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher">
+            <div class="lang-dropdown">
+                <span class="lang-flag" id="current-flag">🇺🇸</span>
+                <span id="current-lang">EN</span>
+                <div class="lang-menu">
+                    <div class="lang-option" onclick="changeLanguage('en')">
+                        <span class="lang-flag">🇺🇸</span> English
+                    </div>
+                    <div class="lang-option" onclick="changeLanguage('fr')">
+                        <span class="lang-flag">🇫🇷</span> Français
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section" style="padding-top: 150px;">
+            <div class="container">
+                <h1 data-i18n="about.title">About Us</h1>
+                <p data-i18n="about.description">We are a creative studio dedicated to crafting immersive worlds and
+                    unforgettable stories.</p>
+
+                <div
+                    style="margin-top: 4rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Our Philosophy</h2>
+                    <p style="margin-bottom: 2rem;">At Moonfall Studio, we believe that the most compelling stories are
+                        found in the shadows. We explore themes of mystery, resilience, and the beauty found in
+                        darkness.</p>
+
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Our History</h2>
+                    <p>Founded in 2024, we are a small team of passionate developers and artists coming together to
+                        build something unique.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Moonfall Studio. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
