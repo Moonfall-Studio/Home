@@ -349,7 +349,7 @@ header.scrolled {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    opacity: 0;
+    opacity: 0.4;
     transition: all var(--transition-speed);
     white-space: nowrap;
     pointer-events: none;
@@ -368,6 +368,7 @@ header.scrolled {
 
 .side-nav__item:hover .side-nav__label {
     opacity: 1;
+    color: var(--color-accent);
 }
 
 .side-nav__item:hover .side-nav__dot {
@@ -495,6 +496,11 @@ header.scrolled {
     background-color: var(--color-bg-alt);
 }
 
+/* Subtle shadow separations between sections */
+.content-section + .content-section {
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.03), inset 0 1px 30px rgba(0, 0, 0, 0.3);
+}
+
 /* ============================================
    SECTION HERO BLOCKS (Our Work & About Us)
    Compact, same style
@@ -504,7 +510,7 @@ header.scrolled {
 }
 
 .section-hero-block {
-    padding: 8rem 0;
+    padding: 5rem 0;
 }
 
 .section-hero-title {
@@ -532,11 +538,12 @@ header.scrolled {
    ============================================ */
 .section-divider {
     position: relative;
-    height: 80px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--color-bg);
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .section-divider__line {

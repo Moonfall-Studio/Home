@@ -4,7 +4,7 @@
 var translations = {
     en: {
         studioName: "Moonfall Studio",
-        tagline: "Dreaming in the dark.",
+        tagline: "Emotions are the heart of our games.",
         nav: {
             contact: "Get In Touch",
             back: "Back to Home"
@@ -18,26 +18,23 @@ var translations = {
             contact: "Contact"
         },
         work: {
-            title: "Our Work",
-            description: "Crafting atmospheric experiences through games and interactive media."
+            title: "Our Work"
         },
         raya: {
             title: "Raya: The Chaos Within",
-            teaser: "Embrace the chaos. A new journey awaits.",
-            description: "Raya: The Chaos Within is an action-adventure game set in a world fractured by ancient magic. Play as Raya, a warrior seeking to restore balance to a broken moon.",
-            features_title: "Key Features",
-            feature_1: "Immersive storytelling in a dark fantasy world.",
-            feature_2: "Dynamic combat system influenced by lunar phases.",
-            feature_3: "Stunning hand-crafted environments.",
+            teaser: "Embrace the chaos.",
+            description: "After conducting research on chaos energy. One day, they performed an experiment in an attempt to harness this energy. The chaos energy within her awoke, but she doesn't know anything about it, causing instability in the experiment. There was an overload, and it exploded, consuming the place and vaporizing her. Everything it touched turned into something corrupted, broken, and propagating like vines and cracks. They had underestimated how unstable the energy truly was. The energy began to turn into corruption and spread throughout the world.",
+            description2: "Now, the world is corrupted and broken. Life has become difficult because of the creatures that emerged from the corruption. His goal is to fix her mistakes.",
+            description3: "But during her journey, she'll learn that this energy is much more than corruption. It's an evolution of life itself. This energy is alive. It's a consciousness that has become autonomous and can think for itself.",
+            description4: "His goal is to understand and master it\u2014but at what cost?",
+            description5: "Or maybe... do both.",
             wishlist: "Wishlist on Steam",
             genre_label: "Genre",
             genre_value: "Action-Adventure",
             release_label: "Release Date",
-            release_value: "TBA 2025",
+            release_value: "TBA",
             platform_label: "Platform",
-            platform_value: "PC, Console",
-            role_label: "Role",
-            role_value: "Full Development"
+            platform_value: "PC, Console"
         },
         team: {
             title: "Our Team",
@@ -54,11 +51,11 @@ var translations = {
             philosophy_title: "Our Philosophy",
             philosophy_text: "At Moonfall Studio, we believe that the most compelling stories are found in the shadows. We explore themes of mystery, resilience, and the beauty found in darkness.",
             history_title: "Our History",
-            history_text: "Founded in 2024, we are a small team of passionate developers and artists coming together to build something unique."
+            history_text: "Founded in 2026, we are a small team of passionate developers and artists coming together to build something unique."
         },
         contact: {
             title: "Get In Touch",
-            email: "hello@moonfallstudio.com",
+            email: "moonfallstudio.contact@gmail.com",
             form_title: "Send us a message",
             name_placeholder: "Name",
             email_placeholder: "Email",
@@ -71,7 +68,7 @@ var translations = {
     },
     fr: {
         studioName: "Moonfall Studio",
-        tagline: "Rêver dans l'obscurité.",
+        tagline: "Les émotions sont le cœur de nos jeux.",
         nav: {
             contact: "Nous Contacter",
             back: "Retour à l'accueil"
@@ -85,26 +82,23 @@ var translations = {
             contact: "Contact"
         },
         work: {
-            title: "Nos Travaux",
-            description: "Créer des expériences immersives à travers le jeu vidéo et les médias interactifs."
+            title: "Nos Travaux"
         },
         raya: {
             title: "Raya: The Chaos Within",
-            teaser: "Embrassez le chaos. Un nouveau voyage vous attend.",
-            description: "Raya: The Chaos Within est un jeu d'action-aventure se déroulant dans un monde fracturé par une magie ancienne. Incarnez Raya, une guerrière cherchant à rétablir l'équilibre d'une lune brisée.",
-            features_title: "Caractéristiques clés",
-            feature_1: "Une narration immersive dans un monde de dark fantasy.",
-            feature_2: "Un système de combat dynamique influencé par les phases lunaires.",
-            feature_3: "Des environnements époustouflants créés à la main.",
+            teaser: "Embrassez le chaos.",
+            description: "Après avoir mené des recherches sur l'énergie du chaos. Un jour, ils ont réalisé une expérience pour tenter de maîtriser cette énergie. L'énergie du chaos en elle s'est éveillée, mais elle n'en sait rien, provoquant une instabilité dans l'expérience. Il y a eu une surcharge, et tout a explosé, consumant l'endroit et la vaporisant. Tout ce que l'énergie touchait se transformait en quelque chose de corrompu, brisé, se propageant comme des lianes et des fissures. Ils avaient sous-estimé à quel point cette énergie était instable. L'énergie a commencé à se transformer en corruption et à se répandre à travers le monde.",
+            description2: "Désormais, le monde est corrompu et brisé. La vie est devenue difficile à cause des créatures qui ont émergé de la corruption. Son objectif est de réparer ses erreurs.",
+            description3: "Mais au cours de son voyage, elle apprendra que cette énergie est bien plus que de la corruption. C'est une évolution de la vie elle-même. Cette énergie est vivante. C'est une conscience devenue autonome, capable de penser par elle-même.",
+            description4: "Son objectif est de la comprendre et de la maîtriser\u2014mais à quel prix ?",
+            description5: "Ou peut-être... faire les deux.",
             wishlist: "Ajouter à la liste de souhaits Steam",
             genre_label: "Genre",
             genre_value: "Action-Aventure",
             release_label: "Date de sortie",
-            release_value: "À déterminer 2025",
+            release_value: "À déterminer",
             platform_label: "Plateforme",
-            platform_value: "PC, Console",
-            role_label: "Rôle",
-            role_value: "Développement complet"
+            platform_value: "PC, Console"
         },
         team: {
             title: "Notre Équipe",
@@ -121,11 +115,11 @@ var translations = {
             philosophy_title: "Notre Philosophie",
             philosophy_text: "Chez Moonfall Studio, nous croyons que les histoires les plus captivantes se trouvent dans les ombres. Nous explorons les thèmes du mystère, de la résilience et de la beauté cachée dans l'obscurité.",
             history_title: "Notre Histoire",
-            history_text: "Fondé en 2024, nous sommes une petite équipe de développeurs et d'artistes passionnés qui se réunissent pour créer quelque chose d'unique."
+            history_text: "Fondé en 2026, nous sommes une petite équipe de développeurs et d'artistes passionnés qui se réunissent pour créer quelque chose d'unique."
         },
         contact: {
             title: "Nous Contacter",
-            email: "bonjour@moonfallstudio.com",
+            email: "moonfallstudio.contact@gmail.com",
             form_title: "Envoyez-nous un message",
             name_placeholder: "Nom",
             email_placeholder: "Email",
