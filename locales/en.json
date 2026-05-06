@@ -1,25 +1,73 @@
 {
-    "studioName": "Moonfall Studio",
+    "studioName": "Moonfall",
     "tagline": "Dreaming in the dark.",
     "nav": {
-        "work": "Our Work",
+        "contact": "Get In Touch",
+        "back": "Back to Home"
+    },
+    "side_nav": {
+        "home": "Home",
+        "raya": "Raya",
+        "projects": "Projects",
         "team": "Our Team",
-        "about": "About Us",
-        "contact": "Get In Touch"
+        "about": "About Us"
     },
     "raya": {
         "title": "Raya: The Chaos Within",
         "teaser": "Embrace the chaos. A new journey awaits.",
-        "cta": "Discover the Game",
-        "description": "Raya: The Chaos Within is an action-adventure game set in a world fractured by ancient magic. Play as Raya, a warrior seeking to restore balance to a broken moon."
+        "description": "Raya: The Chaos Within is an action-adventure game set in a world fractured by ancient magic. Play as Raya, a warrior seeking to restore balance to a broken moon.",
+        "features_title": "Key Features",
+        "feature_1": "Immersive storytelling in a dark fantasy world.",
+        "feature_2": "Dynamic combat system influenced by lunar phases.",
+        "feature_3": "Stunning hand-crafted environments.",
+        "wishlist": "Wishlist on Steam",
+        "genre_label": "Genre",
+        "genre_value": "Action-Adventure",
+        "release_label": "Release Date",
+        "release_value": "TBA 2025",
+        "platform_label": "Platform",
+        "platform_value": "PC, Console",
+        "role_label": "Role",
+        "role_value": "Full Development"
+    },
+    "projects": {
+        "title": "Other Projects",
+        "eclipse": {
+            "title": "Project: Eclipse",
+            "genre": "Interactive Experience",
+            "status": "Coming Soon"
+        },
+        "neon": {
+            "title": "Neon Shadows",
+            "genre": "Visual Novel",
+            "status": "Coming Soon"
+        }
+    },
+    "team": {
+        "title": "Our Team",
+        "member1_name": "Jane Doe",
+        "member1_role": "Creative Director",
+        "member2_name": "John Smith",
+        "member2_role": "Lead Developer",
+        "member3_name": "Alex Ray",
+        "member3_role": "Art Director"
     },
     "about": {
         "title": "About Us",
-        "description": "We are a creative studio dedicated to crafting immersive worlds and unforgettable stories. Our passion lies in exploring the unknown and bringing the darkest dreams to light."
+        "description": "We are a creative studio dedicated to crafting immersive worlds and unforgettable stories. Our passion lies in exploring the unknown and bringing the darkest dreams to light.",
+        "philosophy_title": "Our Philosophy",
+        "philosophy_text": "At Moonfall Studio, we believe that the most compelling stories are found in the shadows. We explore themes of mystery, resilience, and the beauty found in darkness.",
+        "history_title": "Our History",
+        "history_text": "Founded in 2024, we are a small team of passionate developers and artists coming together to build something unique."
     },
     "contact": {
-        "title": "Contact",
-        "email": "hello@moonfallstudio.com"
+        "title": "Get In Touch",
+        "email": "hello@moonfallstudio.com",
+        "form_title": "Send us a message",
+        "name_placeholder": "Name",
+        "email_placeholder": "Email",
+        "message_placeholder": "Message",
+        "send": "Send"
     },
     "footer": {
         "rights": "All rights reserved."

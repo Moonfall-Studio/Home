@@ -1,89 +1,389 @@
-// Initialize i18next
-i18next
-    .use(i18nextHttpBackend)
-    .use(i18nextBrowserLanguageDetector)
-    .init({
-        fallbackLng: 'en',
-        debug: true,
-        backend: {
-            loadPath: 'locales/{{lng}}.json',
+// ============================================
+// Embedded Translations
+// ============================================
+var translations = {
+    en: {
+        studioName: "Moonfall Studio",
+        tagline: "Dreaming in the dark.",
+        nav: {
+            contact: "Get In Touch",
+            back: "Back to Home"
+        },
+        side_nav: {
+            home: "Home",
+            work: "Our Work",
+            raya: "Raya",
+            about: "About Us",
+            team: "Our Team",
+            contact: "Contact"
+        },
+        work: {
+            title: "Our Work",
+            description: "Crafting atmospheric experiences through games and interactive media."
+        },
+        raya: {
+            title: "Raya: The Chaos Within",
+            teaser: "Embrace the chaos. A new journey awaits.",
+            description: "Raya: The Chaos Within is an action-adventure game set in a world fractured by ancient magic. Play as Raya, a warrior seeking to restore balance to a broken moon.",
+            features_title: "Key Features",
+            feature_1: "Immersive storytelling in a dark fantasy world.",
+            feature_2: "Dynamic combat system influenced by lunar phases.",
+            feature_3: "Stunning hand-crafted environments.",
+            wishlist: "Wishlist on Steam",
+            genre_label: "Genre",
+            genre_value: "Action-Adventure",
+            release_label: "Release Date",
+            release_value: "TBA 2025",
+            platform_label: "Platform",
+            platform_value: "PC, Console",
+            role_label: "Role",
+            role_value: "Full Development"
+        },
+        team: {
+            title: "Our Team",
+            member1_name: "Jane Doe",
+            member1_role: "Creative Director",
+            member2_name: "John Smith",
+            member2_role: "Lead Developer",
+            member3_name: "Alex Ray",
+            member3_role: "Art Director"
+        },
+        about: {
+            title: "About Us",
+            description: "We are a creative studio dedicated to crafting immersive worlds and unforgettable stories. Our passion lies in exploring the unknown and bringing the darkest dreams to light.",
+            philosophy_title: "Our Philosophy",
+            philosophy_text: "At Moonfall Studio, we believe that the most compelling stories are found in the shadows. We explore themes of mystery, resilience, and the beauty found in darkness.",
+            history_title: "Our History",
+            history_text: "Founded in 2024, we are a small team of passionate developers and artists coming together to build something unique."
+        },
+        contact: {
+            title: "Get In Touch",
+            email: "hello@moonfallstudio.com",
+            form_title: "Send us a message",
+            name_placeholder: "Name",
+            email_placeholder: "Email",
+            message_placeholder: "Message",
+            send: "Send"
+        },
+        footer: {
+            rights: "All rights reserved."
         }
-    }, function (err, t) {
-        if (err) return console.error('something went wrong loading', err);
-        updateContent();
-    });
+    },
+    fr: {
+        studioName: "Moonfall Studio",
+        tagline: "Rêver dans l'obscurité.",
+        nav: {
+            contact: "Nous Contacter",
+            back: "Retour à l'accueil"
+        },
+        side_nav: {
+            home: "Accueil",
+            work: "Nos Travaux",
+            raya: "Raya",
+            about: "À Propos",
+            team: "L'Équipe",
+            contact: "Contact"
+        },
+        work: {
+            title: "Nos Travaux",
+            description: "Créer des expériences immersives à travers le jeu vidéo et les médias interactifs."
+        },
+        raya: {
+            title: "Raya: The Chaos Within",
+            teaser: "Embrassez le chaos. Un nouveau voyage vous attend.",
+            description: "Raya: The Chaos Within est un jeu d'action-aventure se déroulant dans un monde fracturé par une magie ancienne. Incarnez Raya, une guerrière cherchant à rétablir l'équilibre d'une lune brisée.",
+            features_title: "Caractéristiques clés",
+            feature_1: "Une narration immersive dans un monde de dark fantasy.",
+            feature_2: "Un système de combat dynamique influencé par les phases lunaires.",
+            feature_3: "Des environnements époustouflants créés à la main.",
+            wishlist: "Ajouter à la liste de souhaits Steam",
+            genre_label: "Genre",
+            genre_value: "Action-Aventure",
+            release_label: "Date de sortie",
+            release_value: "À déterminer 2025",
+            platform_label: "Plateforme",
+            platform_value: "PC, Console",
+            role_label: "Rôle",
+            role_value: "Développement complet"
+        },
+        team: {
+            title: "Notre Équipe",
+            member1_name: "Jane Doe",
+            member1_role: "Directrice Créative",
+            member2_name: "John Smith",
+            member2_role: "Développeur Principal",
+            member3_name: "Alex Ray",
+            member3_role: "Directeur Artistique"
+        },
+        about: {
+            title: "À Propos",
+            description: "Nous sommes un studio créatif dédié à la conception de mondes immersifs et d'histoires inoubliables. Notre passion réside dans l'exploration de l'inconnu et la mise en lumière des rêves les plus sombres.",
+            philosophy_title: "Notre Philosophie",
+            philosophy_text: "Chez Moonfall Studio, nous croyons que les histoires les plus captivantes se trouvent dans les ombres. Nous explorons les thèmes du mystère, de la résilience et de la beauté cachée dans l'obscurité.",
+            history_title: "Notre Histoire",
+            history_text: "Fondé en 2024, nous sommes une petite équipe de développeurs et d'artistes passionnés qui se réunissent pour créer quelque chose d'unique."
+        },
+        contact: {
+            title: "Nous Contacter",
+            email: "bonjour@moonfallstudio.com",
+            form_title: "Envoyez-nous un message",
+            name_placeholder: "Nom",
+            email_placeholder: "Email",
+            message_placeholder: "Message",
+            send: "Envoyer"
+        },
+        footer: {
+            rights: "Tous droits réservés."
+        }
+    }
+};
 
+// ============================================
+// Language State
+// ============================================
+var currentLanguage = localStorage.getItem('moonfall-lang') || 'en';
+
+// ============================================
+// Translation helper
+// ============================================
+function t(key) {
+    var parts = key.split('.');
+    var obj = translations[currentLanguage];
+    for (var i = 0; i < parts.length; i++) {
+        if (obj && obj.hasOwnProperty(parts[i])) {
+            obj = obj[parts[i]];
+        } else {
+            return key;
+        }
+    }
+    return typeof obj === 'string' ? obj : key;
+}
+
+// ============================================
+// Update all translated content
+// ============================================
 function updateContent() {
-    document.querySelectorAll('[data-i18n]').forEach(function (element) {
-        const key = element.getAttribute('data-i18n');
-        element.innerText = i18next.t(key);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        var translated = t(key);
+        if (translated !== key) {
+            el.textContent = translated;
+        }
     });
 
-    // Update active language dropdown
-    const currentLang = i18next.language.substring(0, 2);
-    const flagElement = document.getElementById('current-flag');
-    const langElement = document.getElementById('current-lang');
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-placeholder');
+        var translated = t(key);
+        if (translated !== key) {
+            el.setAttribute('placeholder', translated);
+        }
+    });
 
-    if (currentLang === 'fr') {
-        if (flagElement) flagElement.innerText = '🇫🇷';
-        if (langElement) langElement.innerText = 'FR';
-    } else {
-        if (flagElement) flagElement.innerText = '🇺🇸';
-        if (langElement) langElement.innerText = 'EN';
+    // Update language toggle active state
+    var enOption = document.getElementById('lang-en');
+    var frOption = document.getElementById('lang-fr');
+    if (enOption && frOption) {
+        enOption.classList.toggle('active', currentLanguage === 'en');
+        frOption.classList.toggle('active', currentLanguage === 'fr');
     }
 }
 
 function changeLanguage(lng) {
-    i18next.changeLanguage(lng, () => {
-        updateContent();
-    });
+    currentLanguage = lng;
+    localStorage.setItem('moonfall-lang', lng);
+    updateContent();
 }
 
-// Navigation Active State
-document.addEventListener('DOMContentLoaded', () => {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a').forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');
-        }
+// ============================================
+// DOM Ready
+// ============================================
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Initial translation
+    updateContent();
+
+    // ------------------------------------------
+    // Language toggle: click on text options
+    // ------------------------------------------
+    document.querySelectorAll('.lang-toggle__option').forEach(function (option) {
+        option.addEventListener('click', function () {
+            var lang = this.getAttribute('data-lang');
+            if (lang) {
+                changeLanguage(lang);
+            }
+        });
     });
 
+    // ------------------------------------------
+    // Burger menu
+    // ------------------------------------------
+    var burgerBtn = document.getElementById('burger-btn');
+    var menuOverlay = document.getElementById('menu-overlay');
+
+    if (burgerBtn && menuOverlay) {
+        burgerBtn.addEventListener('click', function () {
+            burgerBtn.classList.toggle('active');
+            menuOverlay.classList.toggle('open');
+
+            // Prevent body scroll when menu is open
+            if (menuOverlay.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu on item click
+        menuOverlay.querySelectorAll('.menu-nav__item').forEach(function (item) {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href').substring(1);
+                var targetElement = document.getElementById(targetId);
+
+                // Close menu first
+                burgerBtn.classList.remove('active');
+                menuOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+
+                // Scroll to section after small delay for smooth transition
+                setTimeout(function () {
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 300);
+            });
+        });
+    }
+
+    // ------------------------------------------
+    // Smooth scroll for side-nav anchor links
+    // ------------------------------------------
+    document.querySelectorAll('.side-nav__item').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Smooth scroll for header title
+    var headerTitle = document.querySelector('.header-title');
+    if (headerTitle) {
+        headerTitle.addEventListener('click', function (e) {
+            e.preventDefault();
+            var hero = document.getElementById('hero');
+            if (hero) {
+                hero.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    // ------------------------------------------
+    // Side Navigation: Intersection Observer
+    // ------------------------------------------
+    var sideNavItems = document.querySelectorAll('.side-nav__item');
+
+    if (sideNavItems.length > 0) {
+        var sections = [];
+        sideNavItems.forEach(function (item) {
+            var sectionId = item.getAttribute('data-section');
+            var section = document.getElementById(sectionId);
+            if (section) {
+                sections.push({ id: sectionId, element: section });
+            }
+        });
+
+        var observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -40% 0px',
+            threshold: 0
+        };
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var activeId = entry.target.id;
+                    sideNavItems.forEach(function (item) {
+                        item.classList.remove('active');
+                        if (item.getAttribute('data-section') === activeId) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(function (section) {
+            observer.observe(section.element);
+        });
+    }
+
+    // ------------------------------------------
+    // Section Reveal Animation
+    // ------------------------------------------
+    var revealElements = document.querySelectorAll('.section-reveal');
+
+    if (revealElements.length > 0) {
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -80px 0px',
+            threshold: 0.1
+        });
+
+        revealElements.forEach(function (el) {
+            revealObserver.observe(el);
+        });
+    }
+
+    // ------------------------------------------
     // Particles
+    // ------------------------------------------
     initParticles();
 
+    // ------------------------------------------
     // Parallax
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero-section');
+    // ------------------------------------------
+    window.addEventListener('scroll', function () {
+        var scrolled = window.pageYOffset;
+        var hero = document.querySelector('.hero-section');
+        var headerEl = document.querySelector('header');
+
+        // Header: transparent on hero, opaque after
+        if (headerEl) {
+            if (scrolled > window.innerHeight * 0.3) {
+                headerEl.classList.add('scrolled');
+            } else {
+                headerEl.classList.remove('scrolled');
+            }
+        }
+
+        // Parallax
         if (hero) {
             hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
         }
     });
-
-    // Page Transitions
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', e => {
-            const href = link.getAttribute('href');
-            // Only intercept internal links that are not anchors
-            if (href && !href.startsWith('#') && !href.startsWith('mailto:') && href !== '#') {
-                e.preventDefault();
-                document.body.classList.add('fade-out');
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500);
-            }
-        });
-    });
 });
 
+// ============================================
 // Particle System
+// ============================================
 function initParticles() {
-    const canvas = document.getElementById('particles-canvas');
+    var canvas = document.getElementById('particles-canvas');
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
+    var ctx = canvas.getContext('2d');
+    var width, height;
+    var particles = [];
 
     function resize() {
         width = canvas.width = window.innerWidth;
@@ -93,52 +393,48 @@ function initParticles() {
     window.addEventListener('resize', resize);
     resize();
 
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.size = Math.random() * 2;
-            this.alpha = Math.random() * 0.5 + 0.1;
-        }
-
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-
-            if (this.x < 0) this.x = width;
-            if (this.x > width) this.x = 0;
-            if (this.y < 0) this.y = height;
-            if (this.y > height) this.y = 0;
-        }
-
-        draw() {
-            ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
+    function Particle() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.size = Math.random() * 2;
+        this.alpha = Math.random() * 0.5 + 0.1;
     }
 
-    for (let i = 0; i < 100; i++) {
+    Particle.prototype.update = function () {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0) this.x = width;
+        if (this.x > width) this.x = 0;
+        if (this.y < 0) this.y = height;
+        if (this.y > height) this.y = 0;
+    };
+
+    Particle.prototype.draw = function () {
+        ctx.fillStyle = 'rgba(255, 255, 255, ' + this.alpha + ')';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    };
+
+    for (var i = 0; i < 100; i++) {
         particles.push(new Particle());
     }
 
-    // Mouse interaction
-    let mouseX = 0;
-    let mouseY = 0;
-    document.addEventListener('mousemove', (e) => {
+    var mouseX = 0;
+    var mouseY = 0;
+    document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
 
-        // Simple interaction: push particles away
-        particles.forEach(p => {
-            const dx = p.x - mouseX;
-            const dy = p.y - mouseY;
-            const dist = Math.sqrt(dx * dx + dy * dy);
+        particles.forEach(function (p) {
+            var dx = p.x - mouseX;
+            var dy = p.y - mouseY;
+            var dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < 100) {
-                const angle = Math.atan2(dy, dx);
+                var angle = Math.atan2(dy, dx);
                 p.vx += Math.cos(angle) * 0.02;
                 p.vy += Math.sin(angle) * 0.02;
             }
@@ -147,7 +443,7 @@ function initParticles() {
 
     function animate() {
         ctx.clearRect(0, 0, width, height);
-        particles.forEach(p => {
+        particles.forEach(function (p) {
             p.update();
             p.draw();
         });
