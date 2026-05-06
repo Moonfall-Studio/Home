@@ -866,6 +866,11 @@ header.scrolled {
     width: 100%;
 }
 
+/* Standalone contact page */
+.contact-standalone {
+    padding-top: calc(var(--header-height) + 4rem);
+}
+
 /* ============================================
    FOOTER
    ============================================ */
