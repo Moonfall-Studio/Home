@@ -12,6 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -29,8 +33,10 @@
             <span class="burger__text">MENU</span>
         </button>
 
-        <!-- Studio Name (center) -->
-        <a href="#hero" class="header-title">Moonfall Studio</a>
+        <!-- Studio Logo (center) -->
+        <a href="#hero" class="header-logo-link">
+            <img src="assets/images/logo.png" alt="Moonfall Studio" class="header-logo">
+        </a>
 
         <!-- Language Toggle (right) -->
         <button class="lang-toggle" id="lang-toggle-btn">
@@ -82,7 +88,7 @@
         <section id="hero" class="hero-section">
             <canvas id="particles-canvas"></canvas>
             <div class="hero-content">
-                <h1 class="huge-title" data-i18n="studioName">Moonfall Studio</h1>
+                <img src="assets/images/logo.png" alt="Moonfall Studio" class="hero-logo">
                 <p class="tagline" data-i18n="tagline">Emotions are the heart of our games.</p>
             </div>
             <div class="scroll-indicator">
@@ -188,23 +194,105 @@
         <section id="team" class="content-section dark-bg">
             <div class="container section-reveal">
                 <h2 data-i18n="team.title">Our Team</h2>
-                <div class="team-grid">
-                    <div class="team-card">
-                        <div class="team-card__avatar"></div>
-                        <h3 class="team-card__name" data-i18n="team.member1_name">Jane Doe</h3>
-                        <p class="team-card__role" data-i18n="team.member1_role">Creative Director</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-card__avatar"></div>
-                        <h3 class="team-card__name" data-i18n="team.member2_name">John Smith</h3>
-                        <p class="team-card__role" data-i18n="team.member2_role">Lead Developer</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-card__avatar"></div>
-                        <h3 class="team-card__name" data-i18n="team.member3_name">Alex Ray</h3>
-                        <p class="team-card__role" data-i18n="team.member3_role">Art Director</p>
-                    </div>
-                </div>
+
+                <!-- Carousel -->
+                <div class="team-carousel" id="team-carousel">
+                    <div class="team-carousel__track-wrapper">
+                        <div class="team-carousel__track" id="team-track">
+
+                    <!-- Corentin RENARD -->
+                    <a href="https://www.linkedin.com/in/corentin-renard-bb01ab21a/" target="_blank" rel="noopener noreferrer" class="team-card">
+                        <div class="team-card__avatar">
+                            <img src="assets/images/team/corentin.jpg" alt="Corentin RENARD">
+                        </div>
+                        <h3 class="team-card__name">Corentin RENARD</h3>
+                        <p class="team-card__role">CEO &amp; Art / Creative Director</p>
+                        <span class="team-card__linkedin">LinkedIn ↗</span>
+                    </a>
+
+                    <!-- Pierre-Alexis CONDE -->
+                    <a href="https://www.linkedin.com/in/pierre-alexis-conde-270991209/" target="_blank" rel="noopener noreferrer" class="team-card">
+                        <div class="team-card__avatar">
+                            <img src="assets/images/team/pierre-alexis.jpg" alt="Pierre-Alexis CONDE">
+                        </div>
+                        <h3 class="team-card__name">Pierre-Alexis CONDE</h3>
+                        <p class="team-card__role">Co-Founder &amp; Lead Sound Designer</p>
+                        <span class="team-card__linkedin">LinkedIn ↗</span>
+                    </a>
+
+                    <!-- Thomas Surbon -->
+                    <a href="https://www.linkedin.com/in/thomas-surbon/" target="_blank" rel="noopener noreferrer" class="team-card">
+                        <div class="team-card__avatar">
+                            <img src="assets/images/team/thomas.jpg" alt="Thomas Surbon">
+                        </div>
+                        <h3 class="team-card__name">Thomas Surbon</h3>
+                        <p class="team-card__role">Software Engineer</p>
+                        <span class="team-card__linkedin">LinkedIn ↗</span>
+                    </a>
+
+                    <!-- Julian Martin -->
+                    <a href="https://www.linkedin.com/in/julianobadiamartin/" target="_blank" rel="noopener noreferrer" class="team-card">
+                        <div class="team-card__avatar team-card__avatar--initials" data-initials="JM"></div>
+                        <h3 class="team-card__name">Julian Martin</h3>
+                        <p class="team-card__role">UI Programmer</p>
+                        <span class="team-card__linkedin">LinkedIn ↗</span>
+                    </a>
+
+                    <!-- Arthur Waligorski -->
+                    <a href="https://www.linkedin.com/in/arthur-waligorski-07606919b/" target="_blank" rel="noopener noreferrer" class="team-card">
+                        <div class="team-card__avatar team-card__avatar--initials" data-initials="AW"></div>
+                        <h3 class="team-card__name">Arthur Waligorski</h3>
+                        <p class="team-card__role">Music Compositor</p>
+                        <span class="team-card__linkedin">LinkedIn ↗</span>
+                    </a>
+
+                    <!-- Julien Bertrand -->
+                    <a href="https://www.linkedin.com/in/julien-bertrand-8137a8181/" target="_blank" rel="noopener noreferrer" class="team-card">
+                        <div class="team-card__avatar team-card__avatar--initials" data-initials="JB"></div>
+                        <h3 class="team-card__name">Julien Bertrand</h3>
+                        <p class="team-card__role">Software Engineer</p>
+                        <span class="team-card__linkedin">LinkedIn ↗</span>
+                    </a>
+
+                    <!-- Alex Coulaud -->
+                    <a href="https://www.linkedin.com/in/alex-coulaud-131198252/" target="_blank" rel="noopener noreferrer" class="team-card">
+                        <div class="team-card__avatar team-card__avatar--initials" data-initials="AC"></div>
+                        <h3 class="team-card__name">Alex Coulaud</h3>
+                        <p class="team-card__role">3D Character Artist</p>
+                        <span class="team-card__linkedin">LinkedIn ↗</span>
+                    </a>
+
+                    <!-- Mathilde Béguinot -->
+                    <a href="https://www.linkedin.com/in/mathilde-béguinot-841303265/" target="_blank" rel="noopener noreferrer" class="team-card">
+                        <div class="team-card__avatar team-card__avatar--initials" data-initials="MB"></div>
+                        <h3 class="team-card__name">Mathilde Béguinot</h3>
+                        <p class="team-card__role">Technical &amp; VFX Artist</p>
+                        <span class="team-card__linkedin">LinkedIn ↗</span>
+                    </a>
+
+                    <!-- Hugo Le Bolloc'h -->
+                    <a href="https://www.linkedin.com/in/hugolebolloch/" target="_blank" rel="noopener noreferrer" class="team-card">
+                        <div class="team-card__avatar team-card__avatar--initials" data-initials="HL"></div>
+                        <h3 class="team-card__name">Hugo Le Bolloc'h</h3>
+                        <p class="team-card__role">Technical Sound Designer</p>
+                        <span class="team-card__linkedin">LinkedIn ↗</span>
+                    </a>
+
+                        </div><!-- /.team-carousel__track -->
+                    </div><!-- /.team-carousel__track-wrapper -->
+
+                    <!-- Navigation Arrows -->
+                    <button class="team-carousel__nav team-carousel__nav--prev" id="team-prev" aria-label="Previous">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="team-carousel__nav team-carousel__nav--next" id="team-next" aria-label="Next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+
+                    <!-- Dots -->
+                    <div class="team-carousel__dots" id="team-dots"></div>
+
+                </div><!-- /.team-carousel -->
             </div>
         </section>
 

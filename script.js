@@ -23,11 +23,11 @@ var translations = {
         raya: {
             title: "Raya: The Chaos Within",
             teaser: "Embrace the chaos.",
-            description: "After conducting research on chaos energy. One day, they performed an experiment in an attempt to harness this energy. The chaos energy within her awoke, but she doesn't know anything about it, causing instability in the experiment. There was an overload, and it exploded, consuming the place and vaporizing her. Everything it touched turned into something corrupted, broken, and propagating like vines and cracks. They had underestimated how unstable the energy truly was. The energy began to turn into corruption and spread throughout the world.",
-            description2: "Now, the world is corrupted and broken. Life has become difficult because of the creatures that emerged from the corruption. His goal is to fix her mistakes.",
-            description3: "But during her journey, she'll learn that this energy is much more than corruption. It's an evolution of life itself. This energy is alive. It's a consciousness that has become autonomous and can think for itself.",
-            description4: "His goal is to understand and master it\u2014but at what cost?",
-            description5: "Or maybe... do both.",
+            description: "Play as Raya, the last Chaosweaver from a forgotten civilization and heir to the throne.",
+            description2: "After experimenting to master the chaos energy, the experiment became unstable because the power within her awoke and exploded, vaporizing her and spreading throughout the world.",
+            description3: "She respawns in old ruins with ancient technology that awakens as the corruption spreads. Now, she must undo her mistakes while discovering her origins, the secrets behind this energy, and the world creation history.",
+            description4: "While Raya progresses through her quest, her journey is disturbed by someone who wants the same thing, but with a different vision.",
+            description5: "Ravena, a dark projection of Raya brought to life by an experiment, will appear. She is a piece of Raya’s soul that has taken form and become conscious. She shares Raya's vision but wants to take a different path.",
             wishlist: "Wishlist on Steam",
             genre_label: "Genre",
             genre_value: "Action-Adventure",
@@ -87,11 +87,11 @@ var translations = {
         raya: {
             title: "Raya: The Chaos Within",
             teaser: "Embrassez le chaos.",
-            description: "Après avoir mené des recherches sur l'énergie du chaos. Un jour, ils ont réalisé une expérience pour tenter de maîtriser cette énergie. L'énergie du chaos en elle s'est éveillée, mais elle n'en sait rien, provoquant une instabilité dans l'expérience. Il y a eu une surcharge, et tout a explosé, consumant l'endroit et la vaporisant. Tout ce que l'énergie touchait se transformait en quelque chose de corrompu, brisé, se propageant comme des lianes et des fissures. Ils avaient sous-estimé à quel point cette énergie était instable. L'énergie a commencé à se transformer en corruption et à se répandre à travers le monde.",
-            description2: "Désormais, le monde est corrompu et brisé. La vie est devenue difficile à cause des créatures qui ont émergé de la corruption. Son objectif est de réparer ses erreurs.",
-            description3: "Mais au cours de son voyage, elle apprendra que cette énergie est bien plus que de la corruption. C'est une évolution de la vie elle-même. Cette énergie est vivante. C'est une conscience devenue autonome, capable de penser par elle-même.",
-            description4: "Son objectif est de la comprendre et de la maîtriser\u2014mais à quel prix ?",
-            description5: "Ou peut-être... faire les deux.",
+            description: "Incarnez Raya, la dernière Tisseuse du Chaos issue d’une civilisation oubliée et héritière du trône.",
+            description2: "Alors qu’elle menait des expériences pour maîtriser l’énergie du chaos, celle-ci est devenue instable : le pouvoir qui sommeillait en elle s’est réveillé et a explosé, la vaporisant et se répandant à travers le monde.",
+            description3: "Elle réapparaît dans de vieilles ruines abritant une technologie ancestrale qui s’éveille à mesure que la corruption se propage. Elle doit désormais réparer ses erreurs tout en découvrant ses origines, les secrets de cette énergie et l’histoire de la création du monde.",
+            description4: "Alors que Raya progresse dans sa quête, son parcours est perturbé par quelqu’un qui poursuit le même objectif, mais avec une vision différente.",
+            description5: "Ravena, une projection sombre de Raya donnée vie par une expérience, fera son apparition. Elle est un fragment de l’âme de Raya qui a pris forme et acquis une conscience. Elle partage la vision de Raya, mais souhaite emprunter une voie différente.",
             wishlist: "Ajouter à la liste de souhaits Steam",
             genre_label: "Genre",
             genre_value: "Action-Aventure",
@@ -360,13 +360,170 @@ document.addEventListener('DOMContentLoaded', function () {
                 headerEl.classList.remove('scrolled');
             }
         }
-
-        // Parallax
-        if (hero) {
-            hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
-        }
     });
+    // ============================================
+    // Contact Form Logic (mailto)
+    // ============================================
+    var contactBtn = document.getElementById('contact-send');
+    if (contactBtn) {
+        contactBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('contact-name').value.trim();
+            var email = document.getElementById('contact-email').value.trim();
+            var msg = document.getElementById('contact-message').value.trim();
+
+            if (!name || !email || !msg) {
+                alert(currentLanguage === 'fr' ? 'Veuillez remplir tous les champs du formulaire.' : 'Please fill out all fields.');
+                return;
+            }
+
+            var subject = encodeURIComponent('Moonfall Studio - Contact from ' + name);
+            var body = encodeURIComponent("Message:\n" + msg + "\n\n---\nSender Details:\nName: " + name + "\nEmail: " + email);
+            
+            window.location.href = 'mailto:moonfallstudio.contact@gmail.com?subject=' + subject + '&body=' + body;
+        });
+    }
+
 });
+
+// ============================================
+// Team Carousel
+// ============================================
+(function () {
+    var VISIBLE   = 3;   // cards visible at once (desktop)
+    var INTERVAL  = 3000; // ms between slides (3 seconds)
+    var track     = document.getElementById('team-track');
+    var dotsEl    = document.getElementById('team-dots');
+    var carousel  = document.getElementById('team-carousel');
+    var btnPrev   = document.getElementById('team-prev');
+    var btnNext   = document.getElementById('team-next');
+
+    if (!track || !dotsEl || !carousel) return;
+
+    var total       = track.querySelectorAll('.team-card').length;
+    var current     = 0; // logical index 0 to total-1
+    var isAnimating = false;
+    var timer       = null;
+
+    function perPage() {
+        return window.innerWidth <= 700 ? 1 : VISIBLE;
+    }
+
+    function buildDots() {
+        dotsEl.innerHTML = '';
+        for (var i = 0; i < total; i++) {
+            var dot = document.createElement('button');
+            dot.className = 'team-carousel__dot';
+            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            dot.setAttribute('data-index', i);
+            dot.addEventListener('click', function () {
+                if (isAnimating) return;
+                jumpToDot(parseInt(this.getAttribute('data-index')));
+            });
+            dotsEl.appendChild(dot);
+        }
+        updateDots();
+    }
+
+    function updateDots() {
+        Array.from(dotsEl.querySelectorAll('.team-carousel__dot')).forEach(function (d, i) {
+            d.classList.toggle('active', i === current);
+        });
+    }
+
+    function applyTransform(offset, transition) {
+        var cardWidth = 100 / perPage();
+        if (transition) {
+            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        } else {
+            track.style.transition = 'none';
+        }
+        track.style.transform = 'translateX(-' + (offset * cardWidth) + '%)';
+    }
+
+    function next() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        applyTransform(1, true); // Animate left by 1 card
+
+        setTimeout(function() {
+            // Move first element to the end of the track
+            track.appendChild(track.firstElementChild);
+            // Instantly jump back to 0 offset (cancels out the physical DOM shift)
+            applyTransform(0, false);
+            
+            current = (current + 1) % total;
+            updateDots();
+            isAnimating = false;
+        }, 600); // matches the 0.6s CSS transition
+    }
+
+    function prev() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        // Instantly move last element to the front
+        track.insertBefore(track.lastElementChild, track.firstElementChild);
+        // Instantly offset by -1 card so the view doesn't change visually yet
+        applyTransform(1, false);
+        
+        // Force browser reflow to apply the instant shift
+        void track.offsetWidth;
+
+        // Animate back to 0 offset
+        applyTransform(0, true);
+
+        setTimeout(function() {
+            current = (current - 1 + total) % total;
+            updateDots();
+            isAnimating = false;
+        }, 600);
+    }
+
+    function jumpToDot(target) {
+        if (target === current || isAnimating) return;
+        resetTimer();
+        var diff = target - current;
+        
+        // Instantly rearrange DOM to match target dot without animating
+        if (diff > 0) {
+            for (var i = 0; i < diff; i++) track.appendChild(track.firstElementChild);
+        } else {
+            for (var i = 0; i < Math.abs(diff); i++) track.insertBefore(track.lastElementChild, track.firstElementChild);
+        }
+        
+        current = target;
+        applyTransform(0, false);
+        updateDots();
+    }
+
+    function startTimer() {
+        timer = setInterval(next, INTERVAL);
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        startTimer();
+    }
+
+    // Attach arrow buttons
+    if (btnPrev) btnPrev.addEventListener('click', function() { prev(); resetTimer(); });
+    if (btnNext) btnNext.addEventListener('click', function() { next(); resetTimer(); });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
+    carousel.addEventListener('mouseleave', function () { startTimer(); });
+
+    window.addEventListener('resize', function () {
+        applyTransform(0, false);
+    });
+
+    // Init
+    buildDots();
+    applyTransform(0, false);
+    startTimer();
+})();
 
 // ============================================
 // Particle System
