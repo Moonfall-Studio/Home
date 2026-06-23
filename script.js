@@ -5,14 +5,9 @@ var translations = {
     en: {
         studioName: "Moonfall Studio",
         tagline: "Emotions are the heart of our games.",
-        nav: {
-            contact: "Get In Touch",
-            back: "Back to Home"
-        },
         side_nav: {
             home: "Home",
             work: "Our Work",
-            raya: "Raya",
             about: "About Us",
             team: "Our Team",
             contact: "Contact"
@@ -22,28 +17,15 @@ var translations = {
         },
         raya: {
             title: "Raya: The Chaos Within",
-            teaser: "Embrace the chaos.",
-            description: "Play as Raya, the last Chaosweaver from a forgotten civilization and heir to the throne.",
-            description2: "After experimenting to master the chaos energy, the experiment became unstable because the power within her awoke and exploded, vaporizing her and spreading throughout the world.",
-            description3: "She respawns in old ruins with ancient technology that awakens as the corruption spreads. Now, she must undo her mistakes while discovering her origins, the secrets behind this energy, and the world creation history.",
-            description4: "While Raya progresses through her quest, her journey is disturbed by someone who wants the same thing, but with a different vision.",
-            description5: "Ravena, a dark projection of Raya brought to life by an experiment, will appear. She is a piece of Raya’s soul that has taken form and become conscious. She shares Raya's vision but wants to take a different path.",
-            wishlist: "Wishlist on Steam",
-            genre_label: "Genre",
+            description: "Play as Raya, the last Chaosweaver from a forgotten civilization and heir to the throne. After experimenting to master the chaos energy, the experiment became unstable because the power within her awoke and exploded, vaporizing her origins and spreading throughout the world. She respawns in old ruins with ancient technology that awakens as the corruption spreads. Now, she must undo her mistakes while discovering her origins, the secrets behind this energy, and the world creation history. While Raya progresses through her quest, her journey is disturbed by someone who wants the same thing, but with a different vision. Ravena, a dark projection of Raya brought to life by an experiment, will appear. She is a piece of Raya's soul that has taken form and become conscious. She shares Raya's vision but wants to take a different path.",
+            wishlist: "Wishlist now!",
+            genre_label: "Genre:",
             genre_value: "Action-Adventure",
-            release_label: "Release Date",
-            release_value: "TBA",
-            platform_label: "Platform",
-            platform_value: "PC, Console"
+            release_label: "Release Date:",
+            release_value: "Q2 2029"
         },
         team: {
-            title: "Our Team",
-            member1_name: "Jane Doe",
-            member1_role: "Creative Director",
-            member2_name: "John Smith",
-            member2_role: "Lead Developer",
-            member3_name: "Alex Ray",
-            member3_role: "Art Director"
+            title: "Our Team"
         },
         about: {
             title: "About Us",
@@ -69,14 +51,9 @@ var translations = {
     fr: {
         studioName: "Moonfall Studio",
         tagline: "Les émotions sont le cœur de nos jeux.",
-        nav: {
-            contact: "Nous Contacter",
-            back: "Retour à l'accueil"
-        },
         side_nav: {
             home: "Accueil",
             work: "Nos Travaux",
-            raya: "Raya",
             about: "À Propos",
             team: "L'Équipe",
             contact: "Contact"
@@ -86,28 +63,15 @@ var translations = {
         },
         raya: {
             title: "Raya: The Chaos Within",
-            teaser: "Embrassez le chaos.",
-            description: "Incarnez Raya, la dernière Tisseuse du Chaos issue d’une civilisation oubliée et héritière du trône.",
-            description2: "Alors qu’elle menait des expériences pour maîtriser l’énergie du chaos, celle-ci est devenue instable : le pouvoir qui sommeillait en elle s’est réveillé et a explosé, la vaporisant et se répandant à travers le monde.",
-            description3: "Elle réapparaît dans de vieilles ruines abritant une technologie ancestrale qui s’éveille à mesure que la corruption se propage. Elle doit désormais réparer ses erreurs tout en découvrant ses origines, les secrets de cette énergie et l’histoire de la création du monde.",
-            description4: "Alors que Raya progresse dans sa quête, son parcours est perturbé par quelqu’un qui poursuit le même objectif, mais avec une vision différente.",
-            description5: "Ravena, une projection sombre de Raya donnée vie par une expérience, fera son apparition. Elle est un fragment de l’âme de Raya qui a pris forme et acquis une conscience. Elle partage la vision de Raya, mais souhaite emprunter une voie différente.",
-            wishlist: "Ajouter à la liste de souhaits Steam",
-            genre_label: "Genre",
+            description: "Incarnez Raya, la dernière Tisseuse du Chaos issue d'une civilisation oubliée et héritière du trône. Alors qu'elle menait des expériences pour maîtriser l'énergie du chaos, celle-ci est devenue instable : le pouvoir qui sommeillait en elle s'est réveillé et a explosé, la vaporisant et se répandant à travers le monde. Elle réapparaît dans de vieilles ruines abritant une technologie ancestrale qui s'éveille à mesure que la corruption se propage. Elle doit désormais réparer ses erreurs tout en découvrant ses origines, les secrets de cette énergie et l'histoire de la création du monde. Alors que Raya progresse dans sa quête, son parcours est perturbé par quelqu'un qui poursuit le même objectif, mais avec une vision différente. Ravena, une projection sombre de Raya donnée vie par une expérience, fera son apparition. Elle est un fragment de l'âme de Raya qui a pris forme et acquis une conscience. Elle partage la vision de Raya, mais souhaite emprunter une voie différente.",
+            wishlist: "Ajouter à la wishlist !",
+            genre_label: "Genre :",
             genre_value: "Action-Aventure",
-            release_label: "Date de sortie",
-            release_value: "À déterminer",
-            platform_label: "Plateforme",
-            platform_value: "PC, Console"
+            release_label: "Date de sortie :",
+            release_value: "Q2 2029"
         },
         team: {
-            title: "Notre Équipe",
-            member1_name: "Jane Doe",
-            member1_role: "Directrice Créative",
-            member2_name: "John Smith",
-            member2_role: "Développeur Principal",
-            member3_name: "Alex Ray",
-            member3_role: "Directeur Artistique"
+            title: "Notre Équipe"
         },
         about: {
             title: "À Propos",
@@ -263,15 +227,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Smooth scroll for header title
-    var headerTitle = document.querySelector('.header-title');
-    if (headerTitle) {
-        headerTitle.addEventListener('click', function (e) {
+    // Header logo smooth scroll
+    var headerLogoLink = document.querySelector('.header-logo-link');
+    if (headerLogoLink) {
+        headerLogoLink.addEventListener('click', function (e) {
             e.preventDefault();
             var hero = document.getElementById('hero');
-            if (hero) {
-                hero.scrollIntoView({ behavior: 'smooth' });
-            }
+            if (hero) hero.scrollIntoView({ behavior: 'smooth' });
         });
     }
 
@@ -390,9 +352,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // Team Carousel
 // ============================================
 (function () {
-    var VISIBLE   = 3;   // cards visible at once (desktop)
-    var INTERVAL  = 3000; // ms between slides (3 seconds)
-    var track     = document.getElementById('team-track');
+    var VISIBLE = 3;   // cards visible at once (desktop)
+    var track   = document.getElementById('team-track');
     var dotsEl    = document.getElementById('team-dots');
     var carousel  = document.getElementById('team-carousel');
     var btnPrev   = document.getElementById('team-prev');
@@ -401,9 +362,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!track || !dotsEl || !carousel) return;
 
     var total       = track.querySelectorAll('.team-card').length;
-    var current     = 0; // logical index 0 to total-1
+    var current     = 0;
     var isAnimating = false;
-    var timer       = null;
 
     function perPage() {
         return window.innerWidth <= 700 ? 1 : VISIBLE;
@@ -498,22 +458,9 @@ document.addEventListener('DOMContentLoaded', function () {
         updateDots();
     }
 
-    function startTimer() {
-        timer = setInterval(next, INTERVAL);
-    }
-
-    function resetTimer() {
-        clearInterval(timer);
-        startTimer();
-    }
-
-    // Attach arrow buttons
-    if (btnPrev) btnPrev.addEventListener('click', function() { prev(); resetTimer(); });
-    if (btnNext) btnNext.addEventListener('click', function() { next(); resetTimer(); });
-
-    // Pause on hover
-    carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
-    carousel.addEventListener('mouseleave', function () { startTimer(); });
+    // Attach arrow buttons (manual navigation only — no auto-scroll)
+    if (btnPrev) btnPrev.addEventListener('click', function() { prev(); });
+    if (btnNext) btnNext.addEventListener('click', function() { next(); });
 
     window.addEventListener('resize', function () {
         applyTransform(0, false);
@@ -522,7 +469,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Init
     buildDots();
     applyTransform(0, false);
-    startTimer();
 })();
 
 // ============================================

@@ -516,7 +516,7 @@ header.scrolled {
    CONTENT SECTIONS
    ============================================ */
 .content-section {
-    padding: 6rem 0;
+    padding: 1rem 0 4rem;
     position: relative;
     z-index: 2;
     scroll-margin-top: var(--header-height);
@@ -530,38 +530,6 @@ header.scrolled {
 /* Subtle shadow separations between sections */
 .content-section + .content-section {
     box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.03), inset 0 1px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* ============================================
-   SECTION HERO BLOCKS (Our Work & About Us)
-   Compact, same style
-   ============================================ */
-.work-hero-section {
-    padding: 6rem 0 2rem;
-}
-
-.section-hero-block {
-    padding: 5rem 0;
-}
-
-.section-hero-title {
-    font-size: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--color-accent);
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 1.5rem;
-    display: block;
-    font-weight: 700;
-}
-
-.section-hero-desc {
-    font-size: 1.15rem;
-    max-width: 650px;
-    line-height: 1.7;
-    margin-bottom: 0;
-    color: var(--color-text-muted);
 }
 
 /* ============================================
@@ -582,7 +550,7 @@ header.scrolled {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 160px;
+    width: 1000px;
     height: 1px;
     background: rgba(255, 255, 255, 0.1);
 }
@@ -598,125 +566,173 @@ header.scrolled {
 }
 
 /* ============================================
-   RAYA SECTION
+   RAYA SECTION — Split Layout
    ============================================ */
 .raya-section {
     background: var(--color-bg);
     position: relative;
-    overflow: hidden;
-    padding-top: 3rem;
 }
 
-.raya-hero {
+.raya-split {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    min-height: 480px;
+    width: 100%;
 }
 
-.raya-artwork {
-    width: 100%;
-    height: 350px;
+/* LEFT: Image panel */
+.raya-split__image {
+    flex: 0 0 40%;
     background: rgba(255, 255, 255, 0.03);
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 2px;
+    overflow: hidden;
+}
+
+.raya-artwork-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color-text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 2rem;
-}
-
-.raya-description {
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    text-align: left;
-}
-
-.raya-description p {
-    max-width: 100%;
-}
-
-.raya-features {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-}
-
-.raya-features h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: var(--color-text);
-}
-
-.raya-features ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-    color: var(--color-text-muted);
-}
-
-.raya-features li {
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
-}
-
-.raya-meta {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    text-align: left;
-}
-
-.raya-meta__item {
-    padding: 1.2rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 2px;
-}
-
-.raya-meta__label {
-    display: block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    margin-bottom: 0.4rem;
+    font-size: 1rem;
     letter-spacing: 0.1em;
 }
 
-.raya-meta__value {
-    font-size: 1.05rem;
+.raya-split__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* RIGHT: Info panel */
+.raya-split__info {
+    flex: 1;
+    background: rgba(30, 30, 30, 0.7);
+    padding: 3.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.raya-split__title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.raya-split__description {
+    flex: 1;
+    margin-bottom: 2.5rem;
+    text-align: left;
+    align-self: flex-start;
+    width: 90%;
+}
+
+.raya-split__description p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    text-align: left;
+    margin: 0;
+}
+
+/* Meta bar */
+.raya-split__meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.raya-split__meta-item {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.raya-split__meta-label {
+    color: var(--color-text-muted);
+}
+
+.raya-split__meta-item span:last-child {
     color: var(--color-text);
 }
 
-.raya-screenshots {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto 3rem;
+.raya-split__meta-sep {
+    color: rgba(255,255,255,0.15);
+    font-size: 1.2rem;
 }
 
-.raya-screenshot {
-    background: rgba(255, 255, 255, 0.03);
-    height: 180px;
+/* CTA row */
+.raya-split__cta {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 2px;
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
-.raya-actions {
+.raya-split__steam-logo {
     display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+    cursor: default;
+    user-select: none;
+}
+
+.raya-split__steam-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.raya-split__wishlist-btn {
+    padding: 0.65rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: var(--font-main);
+    transition: all var(--transition-speed);
+    border-radius: 2px;
+}
+
+.raya-split__wishlist-btn:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.5);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .raya-split {
+        flex-direction: column;
+    }
+    .raya-split__image {
+        flex: 0 0 auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .raya-artwork-placeholder {
+        min-height: 240px;
+    }
+    .raya-split__info {
+        padding: 2rem 1.5rem;
+    }
 }
 
 /* ============================================
@@ -742,37 +758,6 @@ header.scrolled {
 .btn:hover {
     background: var(--color-accent);
     color: var(--color-bg);
-}
-
-.btn-steam {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    background: var(--color-steam);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #c6d4df;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    font-family: var(--font-main);
-    font-size: 0.95rem;
-    transition: all var(--transition-speed);
-    cursor: pointer;
-    border-radius: 2px;
-}
-
-.btn-steam:hover {
-    background: var(--color-steam-hover);
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-.btn-steam svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
 }
 
 /* ============================================
@@ -1014,6 +999,12 @@ header.scrolled {
     border-radius: 2px;
     transition: border-color var(--transition-speed);
     outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea.contact-input {
+    resize: none;
 }
 
 .contact-input:focus {
@@ -1026,11 +1017,6 @@ header.scrolled {
 
 .contact-submit {
     width: 100%;
-}
-
-/* Standalone contact page */
-.contact-standalone {
-    padding-top: calc(var(--header-height) + 4rem);
 }
 
 /* ============================================
@@ -1109,29 +1095,12 @@ footer {
         display: none;
     }
 
-    .raya-meta {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .raya-screenshots {
-        grid-template-columns: 1fr;
-    }
-
-    .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 2rem;
-    }
-
     .menu-nav__item {
         font-size: 1.5rem;
     }
 
     .lang-toggle {
         font-size: 0.65rem;
-    }
-
-    .header-title {
-        font-size: 0.85rem;
     }
 }
 
@@ -1142,18 +1111,6 @@ footer {
 
     .tagline {
         font-size: 1rem;
-    }
-
-    .section-hero-title {
-        font-size: 1.6rem;
-    }
-
-    .raya-meta {
-        grid-template-columns: 1fr;
-    }
-
-    .team-grid {
-        grid-template-columns: 1fr;
     }
 
     .menu-nav__item {

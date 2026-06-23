@@ -108,56 +108,51 @@
         </section>
 
         <!-- ==========================================
-             RAYA SECTION
+             RAYA SECTION — Split Layout
              ========================================== -->
-        <section id="raya" class="content-section raya-section">
-            <div class="container section-reveal">
-                <div class="raya-hero">
-                    <h2 data-i18n="raya.title">Raya: The Chaos Within</h2>
-                    <p class="tagline" data-i18n="raya.teaser">Embrace the chaos.</p>
-                </div>
+        <section id="raya" class="raya-section">
+            <div class="raya-split">
 
-                <div class="raya-artwork">
-                    Main Artwork Placeholder
-                </div>
-
-                <div class="raya-description">
-                    <p data-i18n="raya.description">After conducting research on chaos energy. One day, they performed an experiment in an attempt to harness this energy. The chaos energy within her awoke, but she doesn't know anything about it, causing instability in the experiment. There was an overload, and it exploded, consuming the place and vaporizing her. Everything it touched turned into something corrupted, broken, and propagating like vines and cracks. They had underestimated how unstable the energy truly was. The energy began to turn into corruption and spread throughout the world.</p>
-                    <p data-i18n="raya.description2">Now, the world is corrupted and broken. Life has become difficult because of the creatures that emerged from the corruption. His goal is to fix her mistakes.</p>
-                    <p data-i18n="raya.description3">But during her journey, she'll learn that this energy is much more than corruption. It's an evolution of life itself. This energy is alive. It's a consciousness that has become autonomous and can think for itself.</p>
-                    <p data-i18n="raya.description4">His goal is to understand and master it—but at what cost?</p>
-                    <p data-i18n="raya.description5">Or maybe... do both.</p>
-                </div>
-
-                <div class="raya-meta">
-                    <div class="raya-meta__item">
-                        <span class="raya-meta__label" data-i18n="raya.genre_label">Genre</span>
-                        <span class="raya-meta__value" data-i18n="raya.genre_value">Action-Adventure</span>
-                    </div>
-                    <div class="raya-meta__item">
-                        <span class="raya-meta__label" data-i18n="raya.release_label">Release Date</span>
-                        <span class="raya-meta__value" data-i18n="raya.release_value">TBA</span>
-                    </div>
-                    <div class="raya-meta__item">
-                        <span class="raya-meta__label" data-i18n="raya.platform_label">Platform</span>
-                        <span class="raya-meta__value" data-i18n="raya.platform_value">PC, Console</span>
+                <!-- LEFT: Artwork -->
+                <div class="raya-split__image">
+                    <div class="raya-artwork-placeholder">
+                        <span>Image</span>
                     </div>
                 </div>
 
-                <div class="raya-screenshots">
-                    <div class="raya-screenshot">Screenshot Placeholder 1</div>
-                    <div class="raya-screenshot">Screenshot Placeholder 2</div>
-                    <div class="raya-screenshot">Screenshot Placeholder 3</div>
+                <!-- RIGHT: Info -->
+                <div class="raya-split__info">
+                    <h2 class="raya-split__title" data-i18n="raya.title">Raya: The Chaos Within</h2>
+
+                    <div class="raya-split__description">
+                        <p data-i18n="raya.description">Play as Raya, the last Chaosweaver from a forgotten civilization and heir to the throne. After experimenting to master the chaos energy, the experiment became unstable because the power within her awoke and exploded, vaporizing her origins and spreading throughout the world. She respawns in old ruins with ancient technology that awakens as the corruption spreads. Now, she must undo her mistakes while discovering her origins, the secrets behind this energy, and the world creation history. While Raya progresses through her quest, her journey is disturbed by someone who wants the same thing, but with a different vision. Ravena, a dark projection of Raya brought to life by an experiment, will appear. She is a piece of Raya's soul that has taken form and become conscious. She shares Raya's vision but wants to take a different path.</p>
+                    </div>
+
+                    <!-- Meta bar -->
+                    <div class="raya-split__meta">
+                        <span class="raya-split__meta-item">
+                            <span class="raya-split__meta-label" data-i18n="raya.genre_label">Genre:</span>
+                            <span data-i18n="raya.genre_value">Action-Adventure</span>
+                        </span>
+                        <span class="raya-split__meta-sep">·</span>
+                        <span class="raya-split__meta-item">
+                            <span class="raya-split__meta-label" data-i18n="raya.release_label">Release Date:</span>
+                            <span data-i18n="raya.release_value">Q2 2029</span>
+                        </span>
+                    </div>
+
+                    <!-- Steam CTA -->
+                    <div class="raya-split__cta">
+                        <div class="raya-split__steam-logo" aria-label="Steam">
+                            <svg viewBox="0 0 256 259" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                                <path d="M127.779 0C60.21 0 5.2 52.38.486 119.146l68.86 28.477c5.74-3.93 12.66-6.24 20.14-6.24 1.34 0 2.66.067 3.96.2l30.14-43.68v-.613c0-26.51 21.56-48.074 48.07-48.074 26.53 0 48.09 21.577 48.09 48.1 0 26.53-21.56 48.1-48.09 48.1h-1.12l-42.95 30.68c.08 1.06.12 2.12.12 3.2 0 19.88-16.16 36.04-36.04 36.04-17.42 0-31.96-12.4-35.32-28.87L5.21 161.44C20.04 216.32 69.19 258.52 127.78 258.52c70.7 0 128.02-57.31 128.02-128.01C255.8 57.31 198.48 0 127.78 0zM80.47 220.74l-15.63-6.46c2.76 5.74 7.46 10.6 13.7 13.38 13.54 6.04 29.38-.2 35.41-13.73 2.93-6.55 3-13.74.2-20.34-2.8-6.6-7.97-11.56-14.52-14.49-6.48-2.87-13.35-2.81-19.43-.42l16.16 6.68c9.97 4.12 14.7 15.56 10.58 25.53-4.13 9.97-15.57 14.7-25.54 10.58l.07-.03zm111.2-121.57c0-17.7-14.39-32.06-32.09-32.06-17.7 0-32.07 14.36-32.07 32.06 0 17.7 14.37 32.07 32.07 32.07 17.7 0 32.09-14.37 32.09-32.07zm-56.12.07c0-13.32 10.78-24.13 24.1-24.13 13.33 0 24.12 10.8 24.12 24.13 0 13.33-10.79 24.12-24.12 24.12-13.32 0-24.1-10.79-24.1-24.12z" fill="currentColor"/>
+                            </svg>
+                            <span class="raya-split__steam-text">STEAM®</span>
+                        </div>
+                        <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer" class="raya-split__wishlist-btn" data-i18n="raya.wishlist">Wishlist now!</a>
+                    </div>
                 </div>
 
-                <div class="raya-actions">
-                    <a href="#" class="btn-steam" id="steam-wishlist-btn" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 256 259" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M127.779 0C60.21 0 5.2 52.38.486 119.146l68.86 28.477c5.74-3.93 12.66-6.24 20.14-6.24 1.34 0 2.66.067 3.96.2l30.14-43.68v-.613c0-26.51 21.56-48.074 48.07-48.074 26.53 0 48.09 21.577 48.09 48.1 0 26.53-21.56 48.1-48.09 48.1h-1.12l-42.95 30.68c.08 1.06.12 2.12.12 3.2 0 19.88-16.16 36.04-36.04 36.04-17.42 0-31.96-12.4-35.32-28.87L5.21 161.44C20.04 216.32 69.19 258.52 127.78 258.52c70.7 0 128.02-57.31 128.02-128.01C255.8 57.31 198.48 0 127.78 0zM80.47 220.74l-15.63-6.46c2.76 5.74 7.46 10.6 13.7 13.38 13.54 6.04 29.38-.2 35.41-13.73 2.93-6.55 3-13.74.2-20.34-2.8-6.6-7.97-11.56-14.52-14.49-6.48-2.87-13.35-2.81-19.43-.42l16.16 6.68c9.97 4.12 14.7 15.56 10.58 25.53-4.13 9.97-15.57 14.7-25.54 10.58l.07-.03zm111.2-121.57c0-17.7-14.39-32.06-32.09-32.06-17.7 0-32.07 14.36-32.07 32.06 0 17.7 14.37 32.07 32.07 32.07 17.7 0 32.09-14.37 32.09-32.07zm-56.12.07c0-13.32 10.78-24.13 24.1-24.13 13.33 0 24.12 10.8 24.12 24.13 0 13.33-10.79 24.12-24.12 24.12-13.32 0-24.1-10.79-24.1-24.12z" fill="currentColor"/>
-                        </svg>
-                        <span data-i18n="raya.wishlist">Wishlist on Steam</span>
-                    </a>
-                </div>
             </div>
         </section>
 
