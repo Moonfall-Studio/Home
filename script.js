@@ -18,7 +18,7 @@ var translations = {
         raya: {
             title: "Raya: The Chaos Within",
             description: "Play as Raya, the last Chaosweaver from a forgotten civilization and heir to the throne. After experimenting to master the chaos energy, the experiment became unstable because the power within her awoke and exploded, vaporizing her origins and spreading throughout the world. She respawns in old ruins with ancient technology that awakens as the corruption spreads. Now, she must undo her mistakes while discovering her origins, the secrets behind this energy, and the world creation history. While Raya progresses through her quest, her journey is disturbed by someone who wants the same thing, but with a different vision. Ravena, a dark projection of Raya brought to life by an experiment, will appear. She is a piece of Raya's soul that has taken form and become conscious. She shares Raya's vision but wants to take a different path.",
-            wishlist: "Wishlist now!",
+            wishlist: "Coming Soon",
             genre_label: "Genre:",
             genre_value: "Action-Adventure",
             release_label: "Release Date:",
@@ -64,7 +64,7 @@ var translations = {
         raya: {
             title: "Raya: The Chaos Within",
             description: "Incarnez Raya, la dernière Tisseuse du Chaos issue d'une civilisation oubliée et héritière du trône. Alors qu'elle menait des expériences pour maîtriser l'énergie du chaos, celle-ci est devenue instable : le pouvoir qui sommeillait en elle s'est réveillé et a explosé, la vaporisant et se répandant à travers le monde. Elle réapparaît dans de vieilles ruines abritant une technologie ancestrale qui s'éveille à mesure que la corruption se propage. Elle doit désormais réparer ses erreurs tout en découvrant ses origines, les secrets de cette énergie et l'histoire de la création du monde. Alors que Raya progresse dans sa quête, son parcours est perturbé par quelqu'un qui poursuit le même objectif, mais avec une vision différente. Ravena, une projection sombre de Raya donnée vie par une expérience, fera son apparition. Elle est un fragment de l'âme de Raya qui a pris forme et acquis une conscience. Elle partage la vision de Raya, mais souhaite emprunter une voie différente.",
-            wishlist: "Ajouter à la wishlist !",
+            wishlist: "Bientôt disponible",
             genre_label: "Genre :",
             genre_value: "Action-Aventure",
             release_label: "Date de sortie :",

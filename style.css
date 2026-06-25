@@ -703,18 +703,27 @@ header.scrolled {
     padding: 0.65rem 1.5rem;
     border: 1px solid rgba(255,255,255,0.25);
     color: var(--color-text);
-    text-decoration: none;
+    background: transparent;
     font-size: 0.85rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     font-family: var(--font-main);
     transition: all var(--transition-speed);
     border-radius: 2px;
+    cursor: pointer;
 }
 
-.raya-split__wishlist-btn:hover {
+.raya-split__wishlist-btn:not(:disabled):hover {
     background: rgba(255,255,255,0.08);
     border-color: rgba(255,255,255,0.5);
+}
+
+.raya-split__wishlist-btn--disabled,
+.raya-split__wishlist-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    border-color: rgba(255,255,255,0.15);
+    color: var(--color-text-muted);
 }
 
 /* Responsive */
