@@ -29,9 +29,9 @@ var translations = {
         },
         about: {
             title: "About Us",
-            description: "We are a creative studio dedicated to crafting immersive worlds and unforgettable stories. Our passion lies in exploring the unknown and bringing the darkest dreams to light.",
+            description: "We are a creative studio dedicated to crafting immersive worlds and unforgettable stories.",
             philosophy_title: "Our Philosophy",
-            philosophy_text: "At Moonfall Studio, we believe that the most compelling stories are found in the shadows. We explore themes of mystery, resilience, and the beauty found in darkness.",
+            philosophy_text: "At Moonfall Studio, we believe that the most compelling stories are created through emotions.",
             history_title: "Our History",
             history_text: "Founded in 2026, we are a small team of passionate developers and artists coming together to build something unique."
         },
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ============================================
     var contactBtn = document.getElementById('contact-send');
     if (contactBtn) {
-        contactBtn.addEventListener('click', function(e) {
+        contactBtn.addEventListener('click', function (e) {
             e.preventDefault();
             var name = document.getElementById('contact-name').value.trim();
             var email = document.getElementById('contact-email').value.trim();
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var subject = encodeURIComponent('Moonfall Studio - Contact from ' + name);
             var body = encodeURIComponent("Message:\n" + msg + "\n\n---\nSender Details:\nName: " + name + "\nEmail: " + email);
-            
+
             window.location.href = 'mailto:moonfallstudio.contact@gmail.com?subject=' + subject + '&body=' + body;
         });
     }
@@ -353,16 +353,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // ============================================
 (function () {
     var VISIBLE = 3;   // cards visible at once (desktop)
-    var track   = document.getElementById('team-track');
-    var dotsEl    = document.getElementById('team-dots');
-    var carousel  = document.getElementById('team-carousel');
-    var btnPrev   = document.getElementById('team-prev');
-    var btnNext   = document.getElementById('team-next');
+    var track = document.getElementById('team-track');
+    var dotsEl = document.getElementById('team-dots');
+    var carousel = document.getElementById('team-carousel');
+    var btnPrev = document.getElementById('team-prev');
+    var btnNext = document.getElementById('team-next');
 
     if (!track || !dotsEl || !carousel) return;
 
-    var total       = track.querySelectorAll('.team-card').length;
-    var current     = 0;
+    var total = track.querySelectorAll('.team-card').length;
+    var current = 0;
     var isAnimating = false;
 
     function perPage() {
@@ -404,15 +404,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function next() {
         if (isAnimating) return;
         isAnimating = true;
-        
+
         applyTransform(1, true); // Animate left by 1 card
 
-        setTimeout(function() {
+        setTimeout(function () {
             // Move first element to the end of the track
             track.appendChild(track.firstElementChild);
             // Instantly jump back to 0 offset (cancels out the physical DOM shift)
             applyTransform(0, false);
-            
+
             current = (current + 1) % total;
             updateDots();
             isAnimating = false;
@@ -427,14 +427,14 @@ document.addEventListener('DOMContentLoaded', function () {
         track.insertBefore(track.lastElementChild, track.firstElementChild);
         // Instantly offset by -1 card so the view doesn't change visually yet
         applyTransform(1, false);
-        
+
         // Force browser reflow to apply the instant shift
         void track.offsetWidth;
 
         // Animate back to 0 offset
         applyTransform(0, true);
 
-        setTimeout(function() {
+        setTimeout(function () {
             current = (current - 1 + total) % total;
             updateDots();
             isAnimating = false;
@@ -445,22 +445,22 @@ document.addEventListener('DOMContentLoaded', function () {
         if (target === current || isAnimating) return;
         resetTimer();
         var diff = target - current;
-        
+
         // Instantly rearrange DOM to match target dot without animating
         if (diff > 0) {
             for (var i = 0; i < diff; i++) track.appendChild(track.firstElementChild);
         } else {
             for (var i = 0; i < Math.abs(diff); i++) track.insertBefore(track.lastElementChild, track.firstElementChild);
         }
-        
+
         current = target;
         applyTransform(0, false);
         updateDots();
     }
 
     // Attach arrow buttons (manual navigation only — no auto-scroll)
-    if (btnPrev) btnPrev.addEventListener('click', function() { prev(); });
-    if (btnNext) btnNext.addEventListener('click', function() { next(); });
+    if (btnPrev) btnPrev.addEventListener('click', function () { prev(); });
+    if (btnNext) btnNext.addEventListener('click', function () { next(); });
 
     window.addEventListener('resize', function () {
         applyTransform(0, false);
