@@ -75,9 +75,9 @@ var translations = {
         },
         about: {
             title: "À Propos",
-            description: "Nous sommes un studio créatif dédié à la conception de mondes immersifs et d'histoires inoubliables. Notre passion réside dans l'exploration de l'inconnu et la mise en lumière des rêves les plus sombres.",
+            description: "Nous sommes un studio créatif dédié à la conception de mondes immersifs et d'histoires inoubliables.",
             philosophy_title: "Notre Philosophie",
-            philosophy_text: "Chez Moonfall Studio, nous croyons que les histoires les plus captivantes se trouvent dans les ombres. Nous explorons les thèmes du mystère, de la résilience et de la beauté cachée dans l'obscurité.",
+            philosophy_text: "Chez Moonfall Studio, nous croyons que les histoires les plus captivantes se façonnent avec les émotions.",
             history_title: "Notre Histoire",
             history_text: "Fondé en 2026, nous sommes une petite équipe de développeurs et d'artistes passionnés qui se réunissent pour créer quelque chose d'unique."
         },
